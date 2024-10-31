@@ -23,13 +23,10 @@ This application is a RESTful API built with Django and Django REST Framework to
     python -m venv venv
 
 3. **Activate the virtual environment**:
-	•	On Windows:
-    ```bash
-    venv\Scripts\activate
-    
-  •	On macOS/Linux:
-    ```bash
-    source venv/bin/activate
+   ```bash
+   venv\Scripts\activate
+   OR
+   source venv/bin/activate
 
 4. **Install the required packages**:
     ```bash
