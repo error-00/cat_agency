@@ -1,6 +1,4 @@
-Here’s an updated version of the README that includes a section for the requirements.txt file:
-
-# Mission and Target Management Application
+# Spy Cat Agency
 
 This application is a RESTful API built with Django and Django REST Framework to manage missions and their associated targets.
 
