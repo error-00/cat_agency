@@ -1,8 +1,19 @@
 from django.urls import path
-from . import views
+from .views import MissionCreate, MissionList, MissionDetail, TargetCreate, TargetList, TargetDetail
 
-app_name = "missions"
+app_name = "missiong"
 
-# urlpatterns = [
-#     path("search", views.catalog, name="search"),
-# ]
+urlpatterns = [
+    path("missions/", MissionList.as_view(), name="mission-list"),
+    path("missions/<int:pk>/", MissionDetail.as_view(), name="mission-detail"),
+    path("missions/create/", MissionCreate.as_view(), name="mission-create"),
+    path("missions/update/<int:pk>/", MissionDetail.as_view(), name="mission-update"),
+    path("missions/delete/<int:pk>/", MissionDetail.as_view(), name="mission-delete"),
+
+    path("targets/", TargetList.as_view(), name="target-list"),
+    path("targets/<int:pk>/", TargetDetail.as_view(), name="target-detail"),
+    path("targets/create/", TargetCreate.as_view(), name="target-create"),
+    path("targets/update/<int:pk>/", TargetDetail.as_view(), name="target-update"),
+    path("targets/delete/<int:pk>/", TargetDetail.as_view(), name="target-delete"),
+]
+
