@@ -51,7 +51,7 @@ This application is a RESTful API built with Django and Django REST Framework to
 
 You can manage cats, missions and targets using the defined API endpoints. Use Postman or any API client to interact with the application.
 
-API Endpoints
+## API Endpoints
 
 	•	GET /missions/ - List all missions
 	•	POST /missions/create/ - Create a new mission
