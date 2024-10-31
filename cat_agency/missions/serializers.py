@@ -9,8 +9,18 @@ class TargetSerializer(serializers.ModelSerializer):
 
 
 class MissionSerializer(serializers.ModelSerializer):
-    targets = serializers.PrimaryKeyRelatedField(many=True, queryset=Target.objects.all())
+    targets = TargetSerializer(many=True)
 
     class Meta:
         model = Mission
         fields = "__all__"
+
+    def create(self, validated_data):
+        targets_data = validated_data.pop("targets")
+        mission = Mission.objects.create(**validated_data)
+
+        for target_data in targets_data:
+            target = Target.objects.create(**target_data)  # Create target
+            mission.targets.add(target)
+
+        return mission

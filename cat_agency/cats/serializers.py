@@ -19,4 +19,14 @@ class SpyCatSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError(f"Breed '{value}' not found")
         
         return value
+    
+
+    def update(self, instance, validated_data):
+        # Check if updating only salary
+        if 'salary' in validated_data:
+            instance.salary = validated_data['salary']
+            instance.save()
+            return instance
+        else:
+            raise serializers.ValidationError("Only the 'salary' can be updated.")
         
