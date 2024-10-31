@@ -8,6 +8,9 @@ class SpyCatList(generics.ListCreateAPIView):
     queryset = SpyCat.objects.all()
     serializer_class = SpyCatSerializer
 
+    def perform_create(self, serializer):
+        serializer.save()
+
 
 # Getting and updating/deleting specific cat
 class SpyCatDetail(generics.RetrieveUpdateDestroyAPIView):
@@ -15,7 +18,3 @@ class SpyCatDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = SpyCatSerializer
 
 
-# Creating new cat (POST)
-class SpyCatCreate(generics.CreateAPIView):
-    queryset = SpyCat.objects.all()
-    serializer_class = SpyCatSerializer

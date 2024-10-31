@@ -14,10 +14,6 @@ class MissionDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Mission.objects.all()
     serializer_class = MissionSerializer
 
-# Creating new mission (POST)
-class MissionCreate(generics.CreateAPIView):
-    queryset = Mission.objects.all()
-    serializer_class = MissionSerializer
 
 
 # List of targets
@@ -31,8 +27,3 @@ class TargetDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Target.objects.all()
     serializer_class = TargetSerializer
 
-
-# Creating new target (POST)
-class TargetCreate(generics.CreateAPIView):
-    queryset = Target.objects.all()
-    serializer_class = TargetSerializer
